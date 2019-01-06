@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">feature</string>
+    <string name="resource">FeatureA resource</string>
+</resources>
