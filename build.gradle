@@ -38,6 +38,7 @@ subprojects {
         timestampedReports = false
         exportLineCoverage = true
         outputFormats = ['XML']
+        mutators = ["NEW_DEFAULTS"]
     }
 }
 
