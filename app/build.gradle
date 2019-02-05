@@ -1,3 +1,7 @@
+import org.pitest.aggregate.ReportAggregator
+import org.pitest.mutationtest.config.DirectoryResultOutputStrategy
+import org.pitest.mutationtest.config.UndatedReportDirCreationStrategy
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -19,15 +23,35 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    applicationVariants.all { variant ->
+
+        rootProject.task("mergePitReport${variant.name.capitalize()}").doLast {
+
+            def builder = ReportAggregator.builder()
+
+            rootProject.subprojects.findAll { p ->
+                if (p.plugins.hasPlugin('pl.droidsonroids.pitest')) {
+                    builder.addMutationResultsFile(file("$p.pitest.reportDir/$variant.name/mutations.xml"))
+                    builder.addLineCoverageFile(file("$p.pitest.reportDir/$variant.name/linecoverage.xml"))
+                    builder.addSourceCodeDirectory(file("$p.projectDir/src/main/java"))
+                    builder.addCompiledCodeDirectory(file("$p.projectDir/build/tmp/kotlin-classes/$variant.name"))
+                }
+
+                builder.resultOutputStrategy(new DirectoryResultOutputStrategy("$rootProject.buildDir/report/pitest", new UndatedReportDirCreationStrategy()))
+                builder.build().aggregateReport()
+            }
+        }
+    }
 }
 
 dependencies {
 
     implementation project(':common')
-    implementation project(':featureA')
+    api project(':featureA')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     testImplementation 'junit:junit:4.12'

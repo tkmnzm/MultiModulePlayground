@@ -7,9 +7,16 @@
         tools:context=".a.FeatureAActivity">
 
     <TextView
-            android:id="@+id/textView"
-            android:text="Feature Activity"
+            android:id="@+id/repo_textView"
+            android:text="Repo Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"/>
+    <TextView
+            android:id="@+id/feature_c_textView"
+            android:text="Feature C Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/repo_textView"/>
 </RelativeLayout>

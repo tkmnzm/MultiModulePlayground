@@ -22,6 +22,8 @@ class FeatureAActivity : AppCompatActivity() {
         setContentView(R.layout.activity_feature)
         AndroidInjection.inject(this)
 
-        findViewById<TextView>(R.id.textView).text = viewModel.text.value
+        findViewById<TextView>(R.id.repo_textView).text = viewModel.repoText.value
+        findViewById<TextView>(R.id.feature_c_textView).text = viewModel.featureCText.value
+
     }
 }

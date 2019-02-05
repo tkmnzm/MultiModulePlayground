@@ -6,8 +6,6 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
-
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
@@ -30,7 +28,7 @@ android {
 dependencies {
 
     implementation project(':common')
-    implementation project(':featureC')
+    api project(':featureB')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -40,8 +38,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
 
     testImplementation 'junit:junit:4.12'
+    testImplementation 'io.mockk:mockk:1.9'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    testImplementation 'androidx.test.ext:truth:1.0.0'
 
     implementation 'com.google.dagger:dagger:2.16'
     kapt 'com.google.dagger:dagger-compiler:2.16'
