@@ -1,4 +1,4 @@
-package tkmnzm.app.multimoduleplayground.feature.a
+package tkmnzm.app.multimoduleplayground.feature.dagger
 
 import android.content.Context
 import tkmnzm.app.multimoduleplayground.feature.R

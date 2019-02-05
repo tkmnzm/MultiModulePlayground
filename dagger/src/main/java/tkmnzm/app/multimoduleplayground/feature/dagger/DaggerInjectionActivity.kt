@@ -1,4 +1,4 @@
-package tkmnzm.app.multimoduleplayground.feature.a
+package tkmnzm.app.multimoduleplayground.feature.dagger
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

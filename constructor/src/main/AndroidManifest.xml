@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="tkmnzm.app.multimoduleplayground.feature.c">
+          package="tkmnzm.app.multimoduleplayground.feature.constructor">
 
     <application>
-        <activity android:name=".ConstructorInjectionActivity">
+        <activity android:name="tkmnzm.app.multimoduleplayground.feature.constructor.ConstructorInjectionActivity">
         </activity>
     </application>
 

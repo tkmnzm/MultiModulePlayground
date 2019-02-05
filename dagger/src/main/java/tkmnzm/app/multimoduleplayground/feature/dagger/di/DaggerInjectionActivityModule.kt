@@ -1,10 +1,10 @@
-package tkmnzm.app.multimoduleplayground.feature.a.di
+package tkmnzm.app.multimoduleplayground.feature.dagger.di
 
 import android.content.Context
 import dagger.Module
 import dagger.Provides
 import tkmnzm.app.multimoduleplayground.common.di.ActivityScope
-import tkmnzm.app.multimoduleplayground.feature.a.DaggerInjectionActivity
+import tkmnzm.app.multimoduleplayground.feature.dagger.DaggerInjectionActivity
 
 @Module(includes = [DaggerInjectionModule::class])
 class DaggerInjectionActivityModule {

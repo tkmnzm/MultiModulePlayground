@@ -1,12 +1,12 @@
-package tkmnzm.app.multimoduleplayground.feature.a
+package tkmnzm.app.multimoduleplayground.feature.dagger
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import tkmnzm.app.multimoduleplayground.feature.b.FeatureB
+import tkmnzm.app.multimoduleplayground.feature.Feature
 
 class DaggerInjectionViewModel constructor(private val repo: Repository,
-                                           private val featureB: FeatureB) : ViewModel() {
+                                           private val featureB: Feature) : ViewModel() {
 
     val repoText: LiveData<String> by lazy {
         MutableLiveData<String>().also {

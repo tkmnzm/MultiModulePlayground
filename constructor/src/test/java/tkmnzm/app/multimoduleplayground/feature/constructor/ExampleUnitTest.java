@@ -1,4 +1,4 @@
-package tkmnzm.app.multimoduleplayground.feature.c;
+package tkmnzm.app.multimoduleplayground.feature.constructor;
 
 import org.junit.Test;
 

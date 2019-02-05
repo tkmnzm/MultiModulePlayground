@@ -1,4 +1,4 @@
-package tkmnzm.app.multimoduleplayground.feature.a
+package tkmnzm.app.multimoduleplayground.feature.dagger
 
 import android.app.Activity
 import android.app.Application
@@ -8,7 +8,6 @@ import dagger.android.DispatchingAndroidInjector_Factory
 import dagger.android.HasActivityInjector
 import org.junit.Test
 
-import org.junit.Assert.*
 import javax.inject.Provider
 
 class FeatureAActivityTest {

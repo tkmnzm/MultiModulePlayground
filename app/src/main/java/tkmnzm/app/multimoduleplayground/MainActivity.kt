@@ -3,7 +3,8 @@ package tkmnzm.app.multimoduleplayground
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import tkmnzm.app.multimoduleplayground.feature.a.DaggerInjectionActivity
+import tkmnzm.app.multimoduleplayground.feature.dagger.DaggerInjectionActivity
+import tkmnzm.app.multimoduleplayground.feature.constructor.ConstructorInjectionActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,5 +13,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         startActivity(Intent(this, DaggerInjectionActivity::class.java))
+        startActivity(Intent(this, ConstructorInjectionActivity::class.java))
     }
 }
