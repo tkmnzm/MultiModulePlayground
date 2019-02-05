@@ -4,12 +4,12 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import tkmnzm.app.multimoduleplayground.common.di.ActivityScope
-import tkmnzm.app.multimoduleplayground.feature.a.FeatureAActivity
-import tkmnzm.app.multimoduleplayground.feature.a.di.FeatureAActivityModule
+import tkmnzm.app.multimoduleplayground.feature.a.DaggerInjectionActivity
+import tkmnzm.app.multimoduleplayground.feature.a.di.DaggerInjectionActivityModule
 
 @Module(includes = [AndroidSupportInjectionModule::class])
 abstract class AppModule {
     @ActivityScope
-    @ContributesAndroidInjector(modules = [FeatureAActivityModule::class])
-    abstract fun contributesAndroidInjector(): FeatureAActivity
+    @ContributesAndroidInjector(modules = [DaggerInjectionActivityModule::class])
+    abstract fun contributesAndroidInjector(): DaggerInjectionActivity
 }

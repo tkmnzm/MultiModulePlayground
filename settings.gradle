@@ -1,1 +1,1 @@
-include ':app', ':featureA', ':featureB', ':featureC', ':common'
+include ':app', ':dagger', ':feature', ':constructor', ':common'

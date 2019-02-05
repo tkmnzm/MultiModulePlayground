@@ -48,7 +48,7 @@ android {
 dependencies {
 
     implementation project(':common')
-    api project(':featureA')
+    api project(':dagger')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

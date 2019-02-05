@@ -33,6 +33,8 @@
     </Objective-C-extensions>
     <codeStyleSettings language="kotlin">
       <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
+      <option name="METHOD_PARAMETERS_LPAREN_ON_NEXT_LINE" value="false" />
+      <option name="METHOD_PARAMETERS_RPAREN_ON_NEXT_LINE" value="false" />
     </codeStyleSettings>
   </code_scheme>
 </component>
