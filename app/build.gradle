@@ -1,3 +1,4 @@
+// PITのレポートマージに必要なimport文
 import org.pitest.aggregate.ReportAggregator
 import org.pitest.mutationtest.config.DirectoryResultOutputStrategy
 import org.pitest.mutationtest.config.UndatedReportDirCreationStrategy
@@ -24,12 +25,17 @@ android {
         }
     }
 
+    // PITのレポートマージを行うタスクをRootのプロジェクトに定義する
     applicationVariants.all { variant ->
 
+        // PIT実行結果の成果物が各Varianごとに違うディレクトリに出力されるため、mergePitReport#variant名でタスクを定義
+        // 例えば、mergePitReportDebug, mergePitReportReleaseといったタスクが作られる
         rootProject.task("mergePitReport${variant.name.capitalize()}").doLast {
 
+            // PITに実装されているReportAggregatorを使用する
             def builder = ReportAggregator.builder()
 
+            // 各プロジェクトのPIT実行結果XMLや、ソースコードのディレクトリなどを指定
             rootProject.subprojects.findAll { p ->
                 if (p.plugins.hasPlugin('pl.droidsonroids.pitest')) {
                     builder.addMutationResultsFile(file("$p.pitest.reportDir/$variant.name/mutations.xml"))
@@ -38,6 +44,8 @@ android {
                     builder.addCompiledCodeDirectory(file("$p.projectDir/build/tmp/kotlin-classes/$variant.name"))
                 }
 
+                // レポートの出力先の設定
+                // UndatedReportDirCreationStrategyの指定でタイムスタンプごとのレポートディレクトリが指定されなくなる
                 builder.resultOutputStrategy(new DirectoryResultOutputStrategy("$rootProject.buildDir/report/pitest", new UndatedReportDirCreationStrategy()))
                 builder.build().aggregateReport()
             }
