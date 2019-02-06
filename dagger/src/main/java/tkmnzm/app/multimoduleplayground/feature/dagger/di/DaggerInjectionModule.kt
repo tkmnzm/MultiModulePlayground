@@ -12,8 +12,8 @@ import tkmnzm.app.multimoduleplayground.feature.di.FeatureModule
 class DaggerInjectionModule {
 
     @Provides
-    fun viewModelFactory(repo: Repository, featureC: Feature):
-            DaggerInjectionViewModelFactory = DaggerInjectionViewModelFactory(repo, featureC)
+    fun viewModelFactory(repo: Repository, feature: Feature):
+            DaggerInjectionViewModelFactory = DaggerInjectionViewModelFactory(repo, feature)
 
     @Provides
     fun repository(context: Context): Repository = Repository(context)
