@@ -6,9 +6,9 @@ ActivityはAppComponentFactoryを使用してコンストラクタインジェ�
 
 カスタムのAppComponentFactoryは↓に実装しています。
 
-[MyApoComponentFactory](../app/src/main/java/tkmnzm/app/multimoduleplayground/MyApoComponentFactory.kt)
+[MyAppComponentFactory](../app/src/main/java/tkmnzm/app/multimoduleplayground/MyAppComponentFactory.kt)
 
-constructorモジュールで下記のようにActivityのインスタンスを生成しています。
+constructorモジュールでは下記のようにActivityのインスタンスを生成しています。
 
 [ActivityModule](src/main/java/tkmnzm/app/multimoduleplayground/feature/constructor/di/ActivityModule.kt)
 
