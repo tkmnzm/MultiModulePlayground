@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import tkmnzm.app.multimoduleplayground.feature.Feature
-import tkmnzm.app.multimoduleplayground.feature.di.FeatureModule
 
-class ConstructorInjectionActivity(private val featureB: Feature) : AppCompatActivity() {
+class ConstructorInjectionActivity(private val feature: Feature) : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_constructor_injection)
 
-        findViewById<TextView>(R.id.constructor_injection_text).text = featureB.action()
+        findViewById<TextView>(R.id.constructor_injection_text).text = feature.action()
     }
 }
