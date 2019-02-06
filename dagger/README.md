@@ -10,15 +10,15 @@ https://google.github.io/dagger/android.html
 app -> dagger(has Activity) -> feature 
 ```
 
-daggerモジュールの依存定義: [daggerモジュール diパッケージ](src/main/java/tkmnzm/app/multimoduleplayground/feature/dagger/di)
+**daggerモジュールの依存定義:** [daggerモジュール diパッケージ](src/main/java/tkmnzm/app/multimoduleplayground/feature/dagger/di)
 
 daggerモジュール内クラスの依存をDaggerInjectionModuleに定義しています。今回はActivity以外では@Injectアノテーションを使用しない書き方にしました。
 
-featureモジュールの依存定義: [featureモジュール diパッケージ](src/main/java/tkmnzm/app/multimoduleplayground/feature/di)
+**featureモジュールの依存定義:** [featureモジュール diパッケージ](../feature/src/main/java/tkmnzm/app/multimoduleplayground/feature/di)
 
 参照元のモジュールではfeatureモジュールが持つIFを参照するように実装しており、実インスタンスへの解決はFeatureModuleクラスで実現しています。
 
-appモジュールの依存定義: [appモジュール diパッケージ](../app/src/main/java/tkmnzm/app/multimoduleplayground/di)
+**appモジュールの依存定義:** [appモジュール diパッケージ](../app/src/main/java/tkmnzm/app/multimoduleplayground/di)
 
 daggerモジュールのDaggerInjectionActivityModuleを利用して、DaggerInjectionActivityの依存を解決しています。
 
