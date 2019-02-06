@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import tkmnzm.app.multimoduleplayground.feature.Feature
+import tkmnzm.app.multimoduleplayground.feature.di.FeatureModule
 
 class ConstructorInjectionActivity(private val featureB: Feature) : AppCompatActivity() {
 
